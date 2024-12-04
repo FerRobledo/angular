@@ -1,0 +1,13 @@
+<p>Nombre: {{nombre}}</p>
+<p>Apellido: {{ apellido }}</p>
+<p>Edad: {{edad  >= 18 ? "Mayor de edad": "Menor de edad" }}</p>
+
+
+Nuevo nombre: <input type="text" [(ngModel)]="nombre">
+<!-- <input type="text" name="nombre" #nombre (keyup)="(nombre.value)" [disabled]="habilitado"> -->
+
+<br/>
+<br/>
+
+No registrado. <input type="radio" name="registro" value="si" id="registro" [checked]="usuRegistrado" (click)="habilitar($event)"> <br/>
+Registrado. <input type="radio" name="registro" value="no" id="registro" (click)="habilitar($event)">
