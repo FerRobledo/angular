@@ -1,0 +1,18 @@
+<form>
+
+  <input type="text" name="nombre" [(ngModel)]="nombre"> <br/>
+
+  <input type="text" name="apellido" [(ngModel)]="apellido"> <br/>
+
+  <input type="submit" value="Registrar" (click)="registrarUsuario()">
+</form>
+
+<br/>
+
+<p *ngIf="registrado; else sinRegistrar"> {{ mensaje }}</p>
+
+<ng-template #sinRegistrar>
+
+  <p>Nadie registrado</p>
+
+</ng-template>
