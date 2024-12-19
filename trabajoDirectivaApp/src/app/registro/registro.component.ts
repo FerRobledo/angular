@@ -11,13 +11,24 @@ import { FormsModule } from '@angular/forms';
 
 export class RegistroComponent{
 
-  mensaje = "";
+  mensaje:String = "";
 
-  nombre = "";
-  apellido = "";
+  nombre:String = "";
+  apellido:String = "";
 
-  registrado = false;
+  registrado:Boolean = false;
   
+  titulos:{titulo:String}[];
+
+  constructor(){
+
+    this.titulos=[
+      {titulo: "Titulo1"},
+      {titulo: "Titulo2"},
+      {titulo: "Titulo3"}
+    ];
+
+  }
 
   registrarUsuario(){
 
