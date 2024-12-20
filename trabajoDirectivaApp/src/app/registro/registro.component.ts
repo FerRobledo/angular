@@ -15,6 +15,7 @@ export class RegistroComponent{
 
   nombre:String = "";
   apellido:String = "";
+  cargo:String = "";
 
   registrado:Boolean = false;
   
@@ -34,7 +35,7 @@ export class RegistroComponent{
 
     this.registrado = true;
 
-    this.mensaje = "Usuario registrado con éxito: " + this.nombre + " " + this.apellido
+    this.mensaje = "Usuario registrado con éxito!";
   }
 
 }

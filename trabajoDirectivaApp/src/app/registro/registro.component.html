@@ -1,15 +1,20 @@
 <form>
 
+  <label for="nombre">Nombre:</label>
   <input type="text" name="nombre" [(ngModel)]="nombre"> <br/>
 
+  <label for="apellido">Apellido:</label>
   <input type="text" name="apellido" [(ngModel)]="apellido"> <br/>
+
+  <label for="cargo">Cargo:</label>
+  <input type="text" name="cargo" [(ngModel)]="cargo"> <br/>
 
   <input type="submit" value="Registrar" (click)="registrarUsuario()">
 </form>
 
 <br/>
 
-<p *ngIf="registrado; else sinRegistrar"> {{ mensaje }}</p>
+<p *ngIf="registrado; else sinRegistrar"> {{ mensaje }} Con el nombre de: <span [ngClass]="nombre=='fermin' ? 'destacado' : '' "> {{ nombre }} </span> {{ apellido }} y el cargo de <span [ngStyle]="{color: cargo=='director' ? 'red' : 'black'}"> {{cargo}} </span></p>
 
 <ng-template #sinRegistrar>
 
