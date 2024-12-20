@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { Empleado } from './empleado.model';
 import { FormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { EmpleadoHijoCComponent } from "./empleado-hijo-c/empleado-hijo-c.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, EmpleadoHijoCComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
