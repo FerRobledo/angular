@@ -1,0 +1,43 @@
+<form class="form-group row">
+
+    <div class="form-group col-md-3">
+
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" [(ngModel)]="cuadroNombre">
+
+    </div>
+
+    <div class="form-group col-md-3">
+
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" [(ngModel)]="cuadroApellido">
+
+    </div>
+
+    <div class="form-group col-md-3">
+
+        <label for="cargo">Cargo</label>
+        <input type="text" name="cargo" [(ngModel)]="cuadroCargo">
+
+    </div>
+
+    <div class="form-group col-md-3">
+
+        <label for="salario">Salario</label>
+        <input type="number" name="salario" [(ngModel)]="cuadroSalario">
+
+    </div>
+
+</form>
+
+<div *ngIf="accion == 1; else eliminar">
+
+    <button class="btn btn-primary" (click)="actualizaEmpleado()">Actualizar empleado</button>
+
+</div>
+
+<ng-template #eliminar>
+
+    <button class="btn btn-danger" (click)="eliminarEmpleado()">Eliminar empleado</button>
+
+</ng-template>
