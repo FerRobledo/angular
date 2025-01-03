@@ -3,6 +3,8 @@ import { Empleado } from './empleado.model';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet} from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-root',

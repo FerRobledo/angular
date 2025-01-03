@@ -1,4 +1,7 @@
 <div class="container">
+    
+    <app-proyectos></app-proyectos>
+
     <div class="col">
 
         <app-empleado-hijo-c class="row" *ngFor="let empleado of empleados; let i = index" [empleadoDeLista]="empleado" [indice]="i"></app-empleado-hijo-c>
@@ -6,5 +9,8 @@
         <br>
         <br>
 
+        {{empleados}}
+
+        
     </div>
 </div>

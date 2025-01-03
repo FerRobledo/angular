@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Empleado } from './empleado.model';
 import { ServicioEmpleadosService } from './servicio-empleados.service';
+import { DataServices } from './data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,19 +9,23 @@ import { ServicioEmpleadosService } from './servicio-empleados.service';
 
 export class ListaEmpleadosService {
 
-  constructor(private mensajeServicio:ServicioEmpleadosService) { }
+  constructor(private mensajeServicio:ServicioEmpleadosService,private dataService:DataServices) { }
 
-  empleados:Empleado[]=[
-  
-      new Empleado("Fermin", "Robledo", "Desarrollador Backend", 1200),
-      new Empleado("Lautaro", "Andres", "Desarollador Frontend", 1000),
-      new Empleado("Juan", "Wagner", "Tester", 700)
-  
-  ];
+  empleados:Empleado[]=[];
 
   agregarEmpleado(empleado:Empleado){
     this.mensajeServicio.muestraMensaje("Se agrego: " + empleado.nombre + " " + empleado.apellido);
     this.empleados.push(empleado);
+    alert(this.empleados);
+    this.dataService.guardarEmpleados(this.empleados);
+  }
+  
+  setEmpleados(nuevosEmpleados:Empleado[]){
+    this.empleados = nuevosEmpleados;
+  }
+  
+  getEmpleados(){
+    return this.dataService.obtenerEmpleados();
   }
 
   encontrarEmpleado(indice:number): Empleado{
@@ -30,6 +35,8 @@ export class ListaEmpleadosService {
   actualizarEmpleado(indice:number, empleado:Empleado){
     let emp = new Empleado(empleado.nombre, empleado.apellido, empleado.cargo, empleado.salario);
     this.empleados[indice] = emp;
+    this.dataService.actualizarEmpleado(indice, empleado);
+    
   }
 
   eliminarEmpleado(indice:number){
